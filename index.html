@@ -17,11 +17,9 @@
     <title>Demo Cab</title>
   </head>
   <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top"
-    >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow sticky-top" >
       <div class="container-fluid ps-5">
-        <a class="navbar-brand navbar ms-5" href="index.html">
+        <a class="navbar-brand  ms-5 d-flex align-items-center" id="navbar" href="index.html">
           <img src="/assects/cab.png" height="50px" alt="" />
           <h3>Demo Cab</h3>
         </a>
@@ -37,10 +35,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div
-          class="collapse navbar-collapse position-absolute start-50 ms-5 ps-5"
+          class="collapse navbar-collapse "
           id="navbarSupportedContent"
         >
-          <ul class="navbar-nav mb-2 mb-lg-0">
+          <ul class="navbar-nav mb-2 mb-lg-0 ">
             <li class="nav-item">
               <a
                 class="nav-link active fs-5"
@@ -114,7 +112,7 @@
                   onblur="this.placeholder = 'Phone number'"
                 />
               </div>
-              <div class="form-group d-flex">
+              <div class="form-group d-flex-wrap">
                 <div class="default-select" id="default-select">
                   <select>
                     <option value="" disabled selected hidden>
@@ -351,6 +349,7 @@
             src="https://doav52ie4cv60.cloudfront.net/images/quotes.svg"
             alt=""
             width="30px"
+            class="text-center"
             height="30px"
             style="border: none"
           />

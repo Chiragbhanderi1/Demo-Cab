@@ -104,6 +104,8 @@
     background-color: #feea9f;
     width: 33%;
     margin: 25px 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 500px;
@@ -132,9 +134,14 @@
     justify-content: center;
     align-items: center;
 }
+.sec-section{
+    width: 100%;
+}
 @media (max-width:768px) {
     #main-img{
         flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
     } 
     #bg-img h1{
         margin-top: 13px;
@@ -150,6 +157,7 @@
     }
     .ben-box{
         margin: 25px 5px;
+        width: 100%;
     }
     .review-box{
         flex-direction: column;
@@ -159,6 +167,8 @@
     }
     .sec-section{
         flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
     }
 }
 
