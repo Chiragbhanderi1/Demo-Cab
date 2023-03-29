@@ -26,19 +26,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link  fs-5" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link  fs-5" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="about.html">About Us</a>
+              <a class="nav-link fs-5" href="about">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="fleets.html">Popular Fleets</a>
+              <a class="nav-link fs-5" href="fleets">Popular Fleets</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-5" href="book.html">Book Now</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="contact.html">Contact us</a>
+              <a class="nav-link fs-5" href="contact">Contact us</a>
             </li>
           </ul>
         </div>
@@ -49,19 +49,19 @@
       <h1 class="text-white">BOOK YOUR RIDE NOW</h1>
     </div>
     <div class="container" id="booknow-container">
-    <form class="d-flex-col form  align-items-center p-2 rounded " id="form">
+    <form class="d-flex-col form  align-items-center p-2 rounded " action="/submit" method="POST" id="form">
       <div class="from-group d-flex-col align-items-center">
         <h3 class="align-items-center text-center" > Rent a Car </h3>
         <label for="name">Name:</label>
-        <input class="form-control txt-field my-2" type="text" name="name" placeholder="Your name"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'">
+        <input class="form-control txt-field my-2" type="text" name="name" placeholder="Your name"  id="name" required>
         <label for="email">Email:</label>
-        <input class="form-control txt-field my-2" type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
+        <input class="form-control txt-field my-2" type="email" name="email" placeholder="Email address" id="email" required>
         <label for="phone">Phone Number:</label>
-        <input class="form-control txt-field my-2" type="tel" name="phone" placeholder="Phone number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone number'">
+        <input class="form-control txt-field my-2" type="tel" name="phone" placeholder="Phone number" id="phone" required>
       </div>			
       <div class="mt-1 mb-1" id="select-car">
         <label for="car">Select Car:</label>
-        <select name="car">
+        <select name="car" id="car" required>
           <option value="" disabled selected hidden>Select Car</option>
           <option value="1">Small(4 seater)</option>
           <option value="2">Medium (5 seater)</option>
@@ -71,7 +71,7 @@
       <div class="form-group d-flex">
         <div class="default-select" id="pickuppoint">
           <label for="pickuppoint">From Destination:</label>
-        <select name="pickuppoint" >
+        <select name="from" id="from" required  >
           <option value="" disabled selected hidden>From </option>
           <option value="1">Destination One</option>
           <option value="2">Destination Two</option>
@@ -80,7 +80,7 @@
       </div>
            <div class="default-select " id="destination">
             <label for="destination">To Destination:</label>
-        <select name="destination" >
+        <select name="to" id="to" required >
           <option value="" disabled selected hidden>To </option>
           <option value="1">Destination One</option>
           <option value="2">Destination Two</option>
@@ -90,7 +90,7 @@
       </div>				
       <div class="mt-1 " id="self-drive">
         <label for="self-drive">Self Drive:</label>
-        <select name="self-drive">
+        <select  name="selfdrive" id="selfdrive">
           <option value="" disabled selected hidden>Self Drive</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
@@ -98,10 +98,10 @@
       </div>			    
       <div class="form-group">
         <label for="date">Date:</label>                                             
-        <input id="date" type="date" name="date" style="color: rgba(0, 0, 0, 0.6);" class="dates form-control my-2"  placeholder="Date & time" type="text">                        										
+        <input id="date" type="date" required name="date" style="color: rgba(0, 0, 0, 0.6);" class="dates form-control my-2"  placeholder="Date & time" type="text">                        										
       </div>							    
       <div class="form-group">
-            <button type="submit" class="btn btn-warning text-white fs-5 rounded-pill" >Book Now</button>
+            <input type="submit" value="Book Now" id="book-now-btn" class="btn btn-warning text-white fs-5 rounded-pill" />
       </div>
   </form>
 </div>

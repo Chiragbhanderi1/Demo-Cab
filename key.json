@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cab-rental-6445a",
+  "private_key_id": "c876638052ad64d692daeae53dd4bbc13d8e1159",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDMPjyAm18z+fTS\n3WyD1MWoQHUHTpzZO0Ny9W/jybUTbFcchmIvzMTPPpHwxS6ls8oF50cEeUQGvR8Y\nTE/6abar1ue2ISwzLtHLPmPZqH6DFO/X6OTHEVVaAsgfzzxQkmWXTqOSPwUO+IMB\ni3/VIk5NVGpXFH44MNLu1imr7aG6YhgqFMacsgXsYz8z9S2PRl6aoPG+22dBvs+z\nhQqzu3f/mo0p1IK98Uf4AXquwG65UN9A3654x6qiLkDaqovJgeEZeEZ18Yra2UbT\nYShVz6W5uH+17QSGuVxfU+8jhNyIv9Cr8FL52CBpwx97kY3CLOYz5aRAnNXK2l/R\n+r+j9CGJAgMBAAECggEAFHufXLR4SUGllGohYl05z2RbeDahk0WWv5YuuPT3JHIG\nkHVHroyGJlSblT5pLbQIrCvkGuZAdL6NukWY9b+ZUsV0KndMM/vbjVr974uu2F2G\nqiwQmYg6+5Jw2IPThC8SYijATb/lNXmlxcdkNA9DNA0ltwL2n5MB7HLs7fGgeQ0E\nivc2FDr3C5ceG7xUlQevutFD2ejz4vFHwK4pyiOGjXE0KoZajoZVJflp79L9u3Rl\nl5m/5Hio/M/1EmjvGCEmyV1IoZEwb6MvjYz+1yAxtB17KhDOIC5xTHyrb2jzIBZi\n4en3A8/Gpm7NYU/diWhVTljZER0Hv+VFUCqePhOgKQKBgQDl2xgsV+Mrbby5sS/9\nFYFG7eCAloyVMHpguGxk5AYZ4UY0/EdyJaxqwr3TejjDcpU3xeYBB3nlut82fdkx\n8gpV3j4wYFrI5++sPclYQZx3i5Oc0BgbUDSM6EnhJmK+BefITVXb200UpJf2FEkS\nrrLxXjoScO+p16/612+nkQD35QKBgQDjeVrISmpF/rtVKO8gVhTBQ4IxbZueZ3Ui\nE0SkoY9JUgGhKWHxnVs2+evX7C7NUiPxBLWSysUxJauNOIkUKEdsmK9ih6RZ4XpB\n4rZkl1gDsWsfP87J0dR22ylzllQrNRlQeV47TPDh9/EnGdczOMu0WHp07mKHbV74\nE5JNqXBg1QKBgQDXeBHqB505qc4fmFzu90jPr9AjWn2AoQgnQNrDnQmnGwlQRCnJ\ndE1zawi9hLZPaUs+FDKvRk3br9js4P5IlqdfpU1Q1hJkgR+oq+bh5+eAHQSMHHps\nqDwK1vniqLQpg6mql+xjg+l273BQSuXRMJkoMHdpsBrKcRlToL7XKtPojQKBgQDD\nZjM9ae7wQWjaNldzB368pSjpHKZY47YSl0qXwNA8w1zy+4FO80SvbO/SgueRJ8YH\n+2udtOC+3wUGQlI+Jnt0JZRCpxHew3kpr33N2tOYGIdUSJNxefVwQ8LPr4qNswcT\nwa3YcrdY5Isac3AQZ/FT8cz/NOcePi0eHHHIlIwcIQKBgHATNH4PQBIpqqHHvow7\nc2W6aoK4pm91l5Ey2QJJZjTyU8/p5mTuSiU2FMFRvOhL+guMUS7SQ66edD5sB3CL\nR4XmLaFUvs7kYCCv7Q6lbQrSY/eEHodrO0lL2mMoJqwJFXZgDnTwCdZoinPiDCM+\nydeIlbnS+pOyIKxUd0waqX8t\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-zpc3t@cab-rental-6445a.iam.gserviceaccount.com",
+  "client_id": "113074848989362415755",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-zpc3t%40cab-rental-6445a.iam.gserviceaccount.com"
+}

@@ -45,21 +45,21 @@
               <a
                 class="nav-link fs-5"
                 aria-current="page"
-                href="index.html"
+                href="/"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="about.html">About Us</a>
+              <a class="nav-link fs-5" href="about">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="fleets.html">Popular Fleets</a>
+              <a class="nav-link fs-5" href="fleets">Popular Fleets</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="book.html">Book Now</a>
+              <a class="nav-link fs-5" href="book">Book Now</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5" href="contact.html">Contact us</a>
+              <a class="nav-link fs-5" href="contact">Contact us</a>
             </li>
           </ul>
         </div>
@@ -73,61 +73,19 @@
       These are some of our popular fleet. But we have others also.
     </p>
     <div id="fleet-section" class="">
+      <% documents.forEach(function(item) { %>
       <div class="fleet-card">
-        <img src="/assects/car1.png" alt="" width="100%" />
-        <p>₹8/Per Km</p>
+        <img src="<%= item.img %>" alt="" width="100%" />
+        <p>₹ <%= item.price %></p>
         <div class="fleet-info">
-          <h3>Swift 4+1</h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbspAC</div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbspGPS</div>
-          <div><i class="fa-solid fa-map"></i>&nbsp250KM/day</div>
-          <div><i class="fa-solid fa-car"></i>&nbspWell-Maintained Car</div>
+          <h3> <%= item.name %></h3>
+          <div><i class="fa-solid fa-snowflake"></i>&nbsp  <%= item.features.one %></div>
+          <div><i class="fa-solid fa-location-dot"></i>&nbsp<%= item.features.two %></div>
+          <div><i class="fa-solid fa-map"></i>&nbsp<%= item.features.three %></div>
+          <div><i class="fa-solid fa-car"></i>&nbsp<%= item.features.four %></div>
         </div>
       </div>
-      <div class="fleet-card">
-        <img src="/assects/car1.png" alt="" width="100% " />
-        <p>₹8/Per Km</p>
-        <div class="fleet-info">
-          <h3>Swift 4+1</h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbspAC</div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbspGPS</div>
-          <div><i class="fa-solid fa-map"></i>&nbsp250KM/day</div>
-          <div><i class="fa-solid fa-car"></i>&nbspWell-Maintained Car</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <img src="/assects/car1.png" alt="" width="100% " />
-        <p>₹8/Per Km</p>
-        <div class="fleet-info">
-          <h3>Swift 4+1</h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbspAC</div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbspGPS</div>
-          <div><i class="fa-solid fa-map"></i>&nbsp250KM/day</div>
-          <div><i class="fa-solid fa-car"></i>&nbspWell-Maintained Car</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <img src="/assects/car1.png" alt="" width="100% " />
-        <p>₹8/Per Km</p>
-        <div class="fleet-info">
-          <h3>Swift 4+1</h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbspAC</div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbspGPS</div>
-          <div><i class="fa-solid fa-map"></i>&nbsp250KM/day</div>
-          <div><i class="fa-solid fa-car"></i>&nbspWell-Maintained Car</div>
-        </div>
-      </div>
-      <div class="fleet-card">
-        <img src="/assects/car1.png" alt="" width="100% " />
-        <p>₹8/Per Km</p>
-        <div class="fleet-info">
-          <h3>Swift 4+1</h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbspAC</div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbspGPS</div>
-          <div><i class="fa-solid fa-map"></i>&nbsp250KM/day</div>
-          <div><i class="fa-solid fa-car"></i>&nbspWell-Maintained Car</div>
-        </div>
-      </div>
+      <% }) %>
     </div>
 
     <div class="text-white text-center p-5" id="footer">

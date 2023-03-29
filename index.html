@@ -7,6 +7,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <link rel="stylesheet" href="/css/style.css" />
   <script src="https://kit.fontawesome.com/6abf38ad41.js" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
   <title>Demo Cab</title>
 </head>
 
@@ -24,19 +26,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link  fs-5" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link  fs-5" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="about.html">About Us</a>
+            <a class="nav-link fs-5" href="about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="fleets.html">Popular Fleets</a>
+            <a class="nav-link fs-5" href="fleets">Popular Fleets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="book.html">Book Now</a>
+            <a class="nav-link fs-5" href="book">Book Now</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="contact.html">Contact us</a>
+            <a class="nav-link fs-5" href="contact">Contact us</a>
           </li>
         </ul>
       </div>
@@ -58,21 +60,21 @@
           </p>
         </div>
         <div class="col-sm-4 mt-auto" id="form-box">
-          <form class="d-flex-col form align-items-center p-2 rounded" id="form">
+          <form class="d-flex-col form align-items-center p-2 rounded" action="/submit" method="POST" id="form">
             <div class="from-group d-flex-col align-items-center">
               <h3 class="align-items-center text-center text-dark">
                 Book a Ride Now
               </h3>
-              <input class="form-control txt-field my-2" type="text" name="name" placeholder="Your name"
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'" />
-              <input class="form-control txt-field my-2" type="email" name="email" placeholder="Email address"
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" />
-              <input class="form-control txt-field my-2" type="tel" name="phone" placeholder="Phone number"
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone number'" />
+              <input class="form-control txt-field my-2" type="text" id="name" required name="name" placeholder="Your name"
+                 />
+              <input class="form-control txt-field my-2" type="email" id="email" required name="email" placeholder="Email address"
+                />
+              <input class="form-control txt-field my-2" type="tel" id="phone" required name="phone" placeholder="Phone number"
+                />
             </div>
             <div class="form-group d-flex-wrap">
               <div class="default-select mb-2" id="default-select">
-                <select>
+                <select name="from" id="from" required>
                   <option value="" disabled selected hidden>
                     From Destination
                   </option>
@@ -83,7 +85,7 @@
               </div>
 
               <div class="default-select" id="default-select2">
-                <select>
+                <select id="to" name="to" required>
                   <option value="" disabled selected hidden>
                     To Destination
                   </option>
@@ -96,13 +98,12 @@
             <div id="map"></div>
             <div class="form-group">
               <div class="input-group dates-wrap default-select">
-                <input id="date" type="date" class="dates form-control my-2" placeholder="Date & time" type="text" />
+                <input id="date" type="date" name="date" required class="dates form-control my-2" placeholder="Date & time" type="text" />
               </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-default my-2 btn-block text-center" id="btn-form">
-                BOOK YOUR RIDE NOW
-              </button>
+              <input type="submit" value="BOOK YOUR RIDE NOW" class="btn btn-default my-2 btn-block text-center" id="btn-form"> 
+              </input>
             </div>
           </form>
         </div>
@@ -328,8 +329,32 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="/Javascript/script.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+  <script type="module">
+      const firebaseConfig = {
+        apiKey: "AIzaSyBJxOUQq6-WDM4IWhqzXuqtxn7LnCQODYg",
+        authDomain: "cab-rental-6445a.firebaseapp.com",
+        databaseURL: "https://cab-rental-6445a-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "cab-rental-6445a",
+        storageBucket: "cab-rental-6445a.appspot.com",
+        messagingSenderId: "897477891894",
+        appId: "1:897477891894:web:ae64ae37e759d05ce94597",
+        measurementId: "G-WL18LDE6EF"
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the cab data in Firebase
+  const cabRef = firebase.database().ref('cab');
+  console.log(cabRef)
+  // Render the cab data in the HTML page
+  cabRef.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      const cabData = childSnapshot.val();
+      const cabElement = document.createElement('div');
+      cabElement.innerText = `Cab Name: ${cabData.name}, Cab Type: ${cabData.type}, Cab Driver: ${cabData.driver}`;
+      document.getElementById('cab-data').appendChild(cabElement);
+    });
+  });
+  </script>
 </body>
 
 </html>

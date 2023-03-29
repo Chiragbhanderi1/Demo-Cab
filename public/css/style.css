@@ -237,11 +237,11 @@
     font-weight: 500;
     margin-top: 5px;
 }
-#booknow-container form button{
+#book-now-btn{
     width: 100%;
     transition: background-color 1s ease;
 }
-#booknow-container form button:hover{
+#book-now-btn:hover{
     background-color: black;
 }
 #pickuppoint select{
