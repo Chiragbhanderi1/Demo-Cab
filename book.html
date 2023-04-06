@@ -38,6 +38,9 @@
               <a class="nav-link fs-5" href="book.html">Book Now</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link fs-5" href="packages">Popluar Packages</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link fs-5" href="contact">Contact us</a>
             </li>
           </ul>
@@ -63,39 +66,21 @@
         <label for="car">Select Car:</label>
         <select name="car" id="car" required>
           <option value="" disabled selected hidden>Select Car</option>
-          <option value="1">Small(4 seater)</option>
-          <option value="2">Medium (5 seater)</option>
-          <option value="2">Large (7 seater)</option>
+          <option value="hatchback">Hatchback</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV/MUV</option>
+          <option value="premium">Premium</option>
+          <option value="luxary">Luxary</option>
         </select>
       </div>						
-      <div class="form-group d-flex">
-        <div class="default-select" id="pickuppoint">
-          <label for="pickuppoint">From Destination:</label>
-        <select name="from" id="from" required  >
-          <option value="" disabled selected hidden>From </option>
-          <option value="1">Destination One</option>
-          <option value="2">Destination Two</option>
-          <option value="3">Destination Three</option>
-        </select>
+      <div class="" id="pickuppoint">
+        <label for="pickuppoint">From Destination:</label>
+        <input class="form-control txt-field my-2" type="text" name="from" placeholder="Starting Destination" id="from" required>
       </div>
-           <div class="default-select " id="destination">
-            <label for="destination">To Destination:</label>
-        <select name="to" id="to" required >
-          <option value="" disabled selected hidden>To </option>
-          <option value="1">Destination One</option>
-          <option value="2">Destination Two</option>
-          <option value="3">Destination Three</option>
-        </select>
-      </div>
-      </div>				
-      <div class="mt-1 " id="self-drive">
-        <label for="self-drive">Self Drive:</label>
-        <select  name="selfdrive" id="selfdrive">
-          <option value="" disabled selected hidden>Self Drive</option>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-      </div>			    
+          <div class=" " id="destination">
+          <label for="destination">To Destination:</label>
+          <input class="form-control txt-field my-2" type="text" name="to" placeholder="Ending Destination" id="to" required>
+    </div>		  						    
       <div class="form-group">
         <label for="date">Date:</label>                                             
         <input id="date" type="date" required name="date" style="color: rgba(0, 0, 0, 0.6);" class="dates form-control my-2"  placeholder="Date & time" type="text">                        										

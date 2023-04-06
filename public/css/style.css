@@ -13,7 +13,8 @@
 }
 #bg-img p{
     margin-left: 108px;
-    font-size: 1rem;
+    font-size: large;
+    font-weight: 500;
 }
 #heading-from{
     color: black;
@@ -264,7 +265,7 @@
     color: rgba(0, 0, 0, 0.6);
 }
 #select-car select{
-    width: 47vw;
+    width: 100%;
     padding: .375rem .75rem;
     border: 1px solid #ced4da;
     color: rgba(0, 0, 0, 0.6);
@@ -315,7 +316,7 @@
     flex-direction: column;
     justify-items: center;
     justify-content: center;
-    padding-right: 55vw;
+    padding-right: 45vw;
     height: 60vh;
 }
 #carousel-item-1 h2{
@@ -330,18 +331,6 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 3rem;
 }
-#carousel-item-2{
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/ceo.webp) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-left: 15vw;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    padding-right: 55vw;
-    height: 60vh;
-}
 #carousel-item-3{
     background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/manging-director.jpg) ;
     background-repeat: no-repeat;
@@ -352,37 +341,60 @@
     flex-direction: column;
     justify-items: center;
     justify-content: center;
-    padding-right: 55vw;
+    padding-right: 45vw;
     height: 60vh;
 }
 #services{
-    background-color: #f9d140;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 #services h1{
     font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
 }
 #services h3{
     font-weight: 600;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+}
+.services-box{
+    background-color: #333;
+    color: white;
+    border-radius: 30px;
+    padding: 50px;
+    margin: 20px 30px;
+}
+#services-box :hover{
+    scale: 1.02;
 }
 #services h5{
     text-align: center;
 }
 
 #customer{
-    background-color: #cdc1c178;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 #customer h1{
     font-weight: 600;
-    font-family: 'Courier New', Courier, monospace;
+}
+#customer-box div{
+    background-color: #f9d140;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px 20px;
+}
+#customer-box  :hover{
+    scale: 1.02;
+}
+.black-line{
+    height: 2px;
+    width: 5%;
+    padding: 0 !important;
+    display: flex;
+    align-self: center;
+    margin: 0 !important;
+    justify-content: center;
 }
 #our-aim{
     display: flex;
@@ -406,6 +418,8 @@
 }
 #our-aim div p{
     background-color: #333;
+    font-size: large;
+    font-weight: 400;
     padding: 20px;
     color: #f4f4f4;
 }
@@ -434,6 +448,8 @@
 #we-delivier div p{
     background-color: #333;
     padding: 20px;
+    font-size: large;
+    font-weight: 400;
     color: #f4f4f4;
 }
 @media (max-width:768px) {
@@ -528,7 +544,44 @@
     font-weight: 500;
     border-radius:0 0  10px 10px;
 }
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+/* Style for the modal content */
+.modal-content {
+	background-color: #fefefe;
+	margin: 7% auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%; /* Could be more or less, depending on screen size */
+}
+/* Style for the close button */
+.close {
+	color: #aaa;
+	float: right;
+    position: absolute;
+    right: 10px;
+	font-size: 28px;
+	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
 @media (max-width:768px) {
+    .modal-content{
+        margin-top: 10vh;
+    }
     #fleet-section{
         margin: 5px
     }
@@ -537,4 +590,16 @@
         margin-right: 0;
         margin-top: 25px;
     }
+}
+
+/* Packages Page */
+#packages-banner{
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(/assects/map.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
 }

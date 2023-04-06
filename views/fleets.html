@@ -59,6 +59,9 @@
               <a class="nav-link fs-5" href="book">Book Now</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link fs-5" href="packages">Popluar Packages</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link fs-5" href="contact">Contact us</a>
             </li>
           </ul>
@@ -73,19 +76,62 @@
       These are some of our popular fleet. But we have others also.
     </p>
     <div id="fleet-section" class="">
-      <% documents.forEach(function(item) { %>
-      <div class="fleet-card">
-        <img src="<%= item.img %>" alt="" width="100%" />
-        <p>₹ <%= item.price %></p>
+      {{#documents}}
+      <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
+        <img src="{{img}}" alt="" width="100%" />
+        <p>₹ {{price}}</p>
         <div class="fleet-info">
-          <h3> <%= item.name %></h3>
-          <div><i class="fa-solid fa-snowflake"></i>&nbsp  <%= item.features.one %></div>
-          <div><i class="fa-solid fa-location-dot"></i>&nbsp<%= item.features.two %></div>
-          <div><i class="fa-solid fa-map"></i>&nbsp<%= item.features.three %></div>
-          <div><i class="fa-solid fa-car"></i>&nbsp<%= item.features.four %></div>
+          <h3>{{name}}</h3>
+          <div><i class="fa-solid fa-snowflake"></i>&nbsp  {{features.one}}</div>
+          <div><i class="fa-solid fa-location-dot"></i>&nbsp {{features.two}}</div>
+          <div><i class="fa-solid fa-map"></i>&nbsp {{features.three}}</div>
+          <div><i class="fa-solid fa-car"></i>&nbsp {{features.four}}</div>
         </div>
       </div>
-      <% }) %>
+      {{/documents}}
+    </div>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+        <form action="/query" method="POST" id="form">
+          <div class="from-group d-flex-col align-items-center">
+            <h3 class="align-items-center text-center" > Rent a Car </h3>
+            <label for="name">Name:</label>
+            <input class="form-control txt-field my-2" type="text" name="name" placeholder="Your name"  id="name" required>
+            <label for="email">Email:</label>
+            <input class="form-control txt-field my-2" type="email" name="email" placeholder="Email address" id="email" required>
+            <label for="phone">Phone Number:</label>
+            <input class="form-control txt-field my-2" type="tel" name="phone" placeholder="Phone number" id="phone" required>
+          </div>			
+          <div class="mt-1 mb-1" id="select-car">
+            <label for="car">Select Car:</label>
+            <select name="car" id="car" required>
+              <option value="" disabled selected hidden>Select Car</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="sedan">Sedan</option>
+              <option value="suv">SUV/MUV</option>
+              <option value="premium">Premium</option>
+              <option value="luxary">Luxary</option>
+            </select>
+          </div>						
+            <div class="" id="pickuppoint">
+              <label for="pickuppoint">From Destination:</label>
+              <input class="form-control txt-field my-2" type="text" name="from" placeholder="Starting Destination" id="from" required>
+          </div>
+               <div class=" " id="destination">
+                <label for="destination">To Destination:</label>
+                <input class="form-control txt-field my-2" type="text" name="to" placeholder="Ending Destination" id="to" required>
+          </div>				    
+          <div class="form-group">
+            <label for="date">Date:</label>                                             
+            <input id="date" type="date" required name="date" min={new Date().toISOString().split('T')[0]} style="color: rgba(0, 0, 0, 0.6);" class="dates form-control my-2"  placeholder="Date & time" type="text">                        										
+          </div>							    
+          <div class="form-group">
+                <input type="submit" value="Book Now" id="book-now-btn" class="btn btn-warning text-white fs-5 rounded-pill" />
+          </div>
+      </form>
+      </div>
     </div>
 
     <div class="text-white text-center p-5" id="footer">
@@ -156,6 +202,13 @@
       crossorigin="anonymous"
     ></script>
     <script src="/Javascript/script.js"></script>
-    
+    <script>
+      var modal = document.getElementById('myModal');
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
   </body>
 </html>
