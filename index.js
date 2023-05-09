@@ -15,10 +15,6 @@ admin.initializeApp({
 
 const client = twilio("AC5379cc509dd22a03dec92142cb441d5d","2c8f13abd180ca6d8849fc5fd3fda461");
 
-// // Set EJS as the view engine
-// app.set('view engine', 'ejs');
-// app.set('views', 'views');
-
 // Configure Mustache as the templating engine
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
@@ -46,15 +42,24 @@ app.get('/contact', (req, res) => {
 app.get('/book', (req, res) => {
   res.sendFile(__dirname + '/book.html');
 });
-app.get('/packages', (req, res) => {
-  res.sendFile(__dirname + '/packages.html');
+app.get('/packages', async(req, res) => {
+  const data  = await db.collection('packages').get(); 
+  const documents = [];
+  data.docs.forEach((doc) => {
+    const docData = doc.data();
+    docData.id = doc.id; 
+    documents.push(docData);  
+  }); 
+  res.render("packages",{documents})  
 }); 
 
 app.get('/fleets', async(req, res) => { 
   const data  = await db.collection('cab').get(); 
   const documents = [];
   data.docs.forEach((doc) => {
-    documents.push(doc.data()); 
+    const docData = doc.data();
+    docData.id = doc.id; 
+    documents.push(docData); 
   });
   res.render("fleets",{documents})  
   // res.sendFile(__dirname + '/fleets.html');
@@ -63,7 +68,7 @@ app.get('/fleets', async(req, res) => {
 app.post('/submit', async(req, res) => {
   const name = req.body.name
   const email = req.body.email
-  const phone = req.body.phone
+  const phone = req.body.phone  
   const from = req.body.from
   const to = req.body.to 
   const date = req.body.date

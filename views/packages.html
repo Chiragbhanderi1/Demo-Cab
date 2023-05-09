@@ -16,7 +16,7 @@
       src="https://kit.fontawesome.com/6abf38ad41.js"
       crossorigin="anonymous"
     ></script>
-    <title>Demo cab | Packages</title>
+    <title>Cab O Way | Packages</title>
   </head>
   <body>
     <nav
@@ -25,7 +25,7 @@
       <div class="container-fluid ps-5">
         <a class="navbar-brand navbar ms-5" href="index.html">
           <img src="/assects/cab.png" height="50px" alt="" />
-          <h3>Demo Cab</h3>
+          <h3>Cab O Way</h3>
         </a>
         <button
           class="navbar-toggler"
@@ -66,83 +66,29 @@
       <h1 class="text-white">Popluar Packages</h1>
     </div>
     <div id="fleet-section" class="">
+      {{#documents}}
       <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
         <img
-          src="https://www.clubmahindra.com/blog/media/section_images/shuttersto-1a47b83e6a03271.jpg"
+          src="{{img}}"
           alt=""
           width="100%"
         />
         <div class="fleet-info bg-white text-dark" >
-          <h3>Ahemdabad to Shimla</h3>
-          <div><i class="fa-solid fa-clock"></i> &nbsp 5 Days & 4 Nights</div>
-          <div><i class="fa-solid fa-car"></i>&nbsp Self Drive</div>
-          <div>
-            <i class="fa-solid fa-indian-rupee-sign"></i>&nbsp 1250 Km included
-            (extra fare onwards)
+          <h3>{{title}}</h3>
+          <div><i class="fa-solid fa-clock"></i> &nbsp {{duration}}</div>
+          <div>₹&nbsp {{price}}</div>
+          <div>&nbsp {{distance}} (extra fare onwards)
           </div>
           <div>* Fair very accroding to cars</div>
         </div>
       </div>
-      <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
-        <img src="/assects/vadodara.jpeg" alt="" width="100%" height="215px" />
-        <div class="fleet-info bg-white text-dark">
-          <h3>Ahemdabad to Vadodara</h3>
-          <div><i class="fa-solid fa-car"></i>&nbsp Driver</div>
-          <div>
-            <i class="fa-solid fa-indian-rupee-sign"></i>&nbsp 111 Km included
-            (extra fare onwards)
-          </div>
-          <div>* Fair very accroding to cars</div>
-        </div>
-      </div>
-      <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
-        <img src="/assects/goa.jpeg" alt="" width="100%" height="190px" />
-        <div class="fleet-info bg-white text-dark">
-          <h3>Ahemdabad to Goa</h3>
-          <div><i class="fa-solid fa-clock"></i> &nbsp 3 Days & 4 Nights</div>
-          <div><i class="fa-solid fa-car"></i>&nbsp Self Drive</div>
-          <div>
-            <i class="fa-solid fa-indian-rupee-sign"></i>&nbsp 1220 Km included
-            (extra fare onwards)
-          </div>
-          <div>* Fair very accroding to cars</div>
-        </div>
-      </div>
-      <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
-        <img
-          src="/assects/mahabaleshwar.jpeg"
-          alt=""
-          width="100%"
-          height="157px"
-        />
-        <div class="fleet-info bg-white text-dark">
-          <h3>Ahemdabad to Mahabaleshwar</h3>
-          <div><i class="fa-solid fa-car"></i>&nbsp Self Drive</div>
-          <div>
-            <i class="fa-solid fa-indian-rupee-sign"></i>&nbsp 800 Km included
-            (extra fare onwards)
-          </div>
-          <div>* Fair very accroding to cars</div>
-        </div>
-      </div>
-      <div class="fleet-card" onclick="document.getElementById('myModal').style.display='block'">
-        <img src="/assects/jaipur.jpeg" alt="" width="100%" height="190px" />
-        <div class="fleet-info bg-white text-dark">
-          <h3>Ahemdabad to Jaipur</h3>
-          <div><i class="fa-solid fa-car"></i>&nbsp Self Drive</div>
-          <div>
-            <i class="fa-solid fa-indian-rupee-sign"></i>&nbsp 700 Km included
-            (extra fare onwards)
-          </div>
-          <div>* Fair very accroding to cars</div>
-        </div>
-      </div>
+      {{/documents}}
     </div>
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-        <form action="/query" method="POST" id="form">
+        <form action="/submit" method="POST" id="form">
           <div class="from-group d-flex-col align-items-center">
             <h3 class="align-items-center text-center" > Rent a Car </h3>
             <label for="name">Name:</label>
@@ -203,7 +149,7 @@
     </div>
     <!-- Footer -->
     <div class="text-white text-center p-5" id="footer">
-      <h4>Demo Cab Rentals</h4>
+      <h4>Cab O Way Rentals</h4>
       <h5>Book Cabs,Self Drive,Outstation Trips</h5>
       <hr
         style="
