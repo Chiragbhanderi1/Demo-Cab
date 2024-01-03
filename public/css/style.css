@@ -514,6 +514,7 @@
 }
 .fleet-card{
     height: fit-content;
+    /* position: relative; */
     width: 30%;
     margin-top: 50px;
     margin-right: 40px;
@@ -531,8 +532,12 @@
     width: fit-content;
     height: fit-content;
     color: white;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.9;
+}
+.imageContainer{
     position: relative;
-    
 }
 .fleet-info{
     background-color: #f9d140;

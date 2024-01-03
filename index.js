@@ -6,7 +6,7 @@ const admin = require('firebase-admin');
 const bodyParser = require('body-parser')
 const twilio = require('twilio');
 const mustacheExpress = require('mustache-express');
-// Initialize Firebase Admin SDK
+// Initialize Firebase Admin SDK 
 const serviceAccount = require('./key.json');
 admin.initializeApp({ 
   credential: admin.credential.cert(serviceAccount),
@@ -14,7 +14,7 @@ admin.initializeApp({
 });
 
 const client = twilio("AC5379cc509dd22a03dec92142cb441d5d","2c8f13abd180ca6d8849fc5fd3fda461");
-
+  
 // Configure Mustache as the templating engine
 app.engine('html', mustacheExpress());
 app.set('view engine', 'html');
@@ -22,7 +22,7 @@ app.set('views', __dirname + '/views');
 
 app.use(express.static(__dirname + "/public/"));
 
-const db =  admin.firestore();
+const db =  admin.firestore(); 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
 
@@ -48,7 +48,7 @@ app.get('/packages', async(req, res) => {
   data.docs.forEach((doc) => {
     const docData = doc.data();
     docData.id = doc.id; 
-    documents.push(docData);  
+    documents.push(docData);   
   }); 
   res.render("packages",{documents})  
 }); 
